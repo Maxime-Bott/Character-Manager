@@ -1,4 +1,4 @@
-(() => {
+(() => {  // CREATE 
     const inputs = Array.from(document.querySelectorAll('.content-inputs input'));
     const tpl = document.querySelector('#tpl-card');
     const target = document.querySelector('#target');
@@ -6,7 +6,7 @@
     const [name, shortDescription, description, image] = values;
     
 
-    //Print characters
+    //Print characters  READ
     const call = async () => {
         try {
             const response = await fetch('https://character-database.becode.xyz/characters');
@@ -30,7 +30,7 @@
 
     call()
 
-    // Add character
+    // Add character UPDATE 
     document.querySelector('#add').addEventListener('click',  async () =>{
         const img = document.querySelector("#card-img").value
         console.log(img)
@@ -52,7 +52,7 @@
         call();
     });
 
-    // Delete character
+    // Delete character DELETE
 
 })();
 
