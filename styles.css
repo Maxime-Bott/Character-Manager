@@ -1,13 +1,19 @@
-.btn:first-child{
-    margin-left: 150px !important;
+.edit{
+    margin-right: 30px; 
+}
+
+.description{
+    text-align: justify;
+}
+
+.name{
+    text-align: center;
 }
 .container{
     display: flex;
     margin: auto;
     flex-direction: column;
     justify-content: center;
-    
-
 }
 h1{
     display: flex;
