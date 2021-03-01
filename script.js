@@ -2,10 +2,8 @@
     const inputs = Array.from(document.querySelectorAll('.content-inputs input'));
     const tpl = document.querySelector('#tpl-card');
     const target = document.querySelector('#target');
-    const values = inputs.map(({value}) => value.trim());
-    const [name, shortDescription, description, image] = values;
     
-
+    
     //Print characters  READ
     const call = async () => {
         try {
@@ -16,7 +14,7 @@
                 
                 elt.querySelector('.img-card').src = image;
                 elt.querySelector('.card-title').textContent = name;
-                elt.querySelector('.card-title-modal').textContent = name;
+                elt.querySelector('.card-title-reveal').textContent = name;
                 elt.querySelector('.card-content').textContent = shortDescription;
                 elt.querySelector('.card-description').textContent = description;
                 
@@ -29,13 +27,15 @@
             console.error(err)
         }
     }
-
+    
     call()
-
+    
     // Add character UPDATE 
     document.querySelector('#add').addEventListener('click',  async () =>{
-        const img = document.querySelector("#card-img").value
-        console.log(img)
+        const values = inputs.map(({value}) => value.trim());
+        const [name, shortDescription, description, image] = values;
+        // const img = document.querySelector("#card-img").value
+        // console.log(img)
 
         const response = await fetch('https://character-database.becode.xyz/characters', {
             method: 'POST',
@@ -46,12 +46,9 @@
                 name,
                 shortDescription,
                 description,
-                image
+                image,
             })
         })
-        const newResponse = await response.json();
-        console.log(newResponse)
-        call();
     });
 
     // Delete character DELETE
