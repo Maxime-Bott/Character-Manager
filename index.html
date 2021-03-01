@@ -14,34 +14,50 @@
 </head>
 
 <body>
-    <div class="container">
-        <!--character card template-->
-        <div class="row">
-            <div class="col s12 m7">
-                <div class="card  hoverable blue-grey darken-4">
-                    <div class="card-image">
-                        <img src="./img/racooon.jpg">
-                        <span class="card-title">Character's name</span>
-                    </div>
-                    <button data-target="modal" class="btn modal-trigger light-blue pulse">More ?</button>
-                    <div class="card-content white-text">
-                        <p>Description of the character Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Quaerat sunt aliquid, reprehenderit quis enim quae nihil delectus a, dolor minima unde iure,
-                            aut eum vel. Consequatur saepe veniam iste at?</p>
-                    </div>
-                    <div class="card-action">
-                        <button class="btn light-blue waves-effect " type="submit" name="action">
-                            Edit
-                        </button>
-                        <button class="btn red waves-effect " type="submit" name="action">
-                            Delete
-                        </button>
+    <main>
+        
+        <section class="container inputs-container">
+            <!--character card template-->
+            <h1>Character Manager</h1>
+            <div class="content-inputs">
+                <form method="post" class='inputs'>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="text" name="sm-description" id="sm-description" placeholder="Short Description">
+                    <input type="text" name="description" id="description" placeholder="Description">
+                    <input type="file" name="img" id="card-img">
+                    <button type="button" id="add">Add</button>
+                </form>
+            </div>
+        </section>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card  hoverable blue-grey darken-4">
+                        <div class="card-image">
+                            <img src="./img/racooon.jpg">
+                            <span class="card-title">Character's name</span>
+                        </div>
+                        <button data-target="modal" class="btn modal-trigger light-blue pulse">More ?</button>
+                        <div class="card-content white-text">
+                            <p>Description of the character Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                Quaerat sunt aliquid, reprehenderit quis enim quae nihil delectus a, dolor minima unde iure,
+                                aut eum vel. Consequatur saepe veniam iste at?</p>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn light-blue waves-effect " type="submit" name="action">
+                                Edit
+                            </button>
+                            <button class="btn red waves-effect " type="submit" name="action">
+                                Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <!--character card template-->
             </div>
-        </div>
-        <!--character card template-->
-    </div>
+    </main>
+    
+        <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,36 @@
 .btn:first-child{
     margin-left: 150px !important;
 }
+.container{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.content-inputs{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    padding: 20px
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 5px 0;
+    width: max-content;
+}
+
+button{
+    margin-top: 5px;
+    width: 100px;
+}
