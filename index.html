@@ -29,57 +29,41 @@
                 </form>
             </div>
         </section>
-        <template id="tpl-card">
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card  hoverable blue-grey darken-4">
+        <div class="row">
+            <template id="tpl-card">
+
+                <div class="col s12 m4">
+                    <div class="card card small hoverable white-text blue-grey darken-4">
                         <div class="card-image">
-                            <img src="" alt ="card-img" class="img-card">
+                            <img src="" alt="card-img" class="img-card">
+
+                        </div>
+                        <button data-target="modal" class="btn waves-effect modal-trigger light-blue">More ?</button>
+                        <div class="center-align">
                             <span class="card-title"></span>
                         </div>
-                        <button data-target="modal" class="btn modal-trigger light-blue pulse">More ?</button>
-                        <div class="card-content white-text">
+
+                        <div class="card-content">
+
                             <p></p>
                         </div>
                         <div class="card-action">
-                            <button class="btn light-blue waves-effect " type="submit" name="action">
-                                Edit
-                            </button>
-                            <button class="btn red waves-effect delBtn" type="submit" name="action">
-                                Delete
-                            </button>
+                            <div class="center-align">
+                                <button class="btn light-blue waves-effect edit " type="submit" name="action">
+                                    Edit
+                                </button>
+                                <button class="btn red waves-effect delBtn" type="submit" name="action">
+                                    Delete
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
         </template>
-        <section id="target">
 
-        </section>
-            <!-- <div class="row">
-                <div class="col s12 m7">
-                    <div class="card  hoverable blue-grey darken-4">
-                        <div class="card-image">
-                            <img src="./img/racooon.jpg">
-                            <span class="card-title">Character's name</span>
-                        </div>
-                        <button data-target="modal" class="btn modal-trigger light-blue pulse">More ?</button>
-                        <div class="card-content white-text">
-                            <p>Description of the character Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Quaerat sunt aliquid, reprehenderit quis enim quae nihil delectus a, dolor minima unde iure,
-                                aut eum vel. Consequatur saepe veniam iste at?</p>
-                        </div>
-                        <div class="card-action">
-                            <button class="btn light-blue waves-effect " type="submit" name="action">
-                                Edit
-                            </button>
-                            <button class="btn red waves-effect " type="submit" name="action">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+        <div id="target"></div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
