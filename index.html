@@ -23,12 +23,39 @@
                     <input type="text" name="name" id="name" placeholder="Name">
                     <input type="text" name="sm-description" id="sm-description" placeholder="Short Description">
                     <input type="text" name="description" id="description" placeholder="Description">
-                    <input type="file" name="img" id="card-img">
+                    <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
                     <button type="button" id="add">Add</button>
                 </form>
             </div>
         </section>
+        <template id="tpl-card">
             <div class="row">
+                <div class="col s12 m7">
+                    <div class="card  hoverable blue-grey darken-4">
+                        <div class="card-image">
+                            <img src="" alt ="card-img" class="img-card">
+                            <span class="card-title"></span>
+                        </div>
+                        <button data-target="modal" class="btn modal-trigger light-blue pulse">More ?</button>
+                        <div class="card-content white-text">
+                            <p></p>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn light-blue waves-effect " type="submit" name="action">
+                                Edit
+                            </button>
+                            <button class="btn red waves-effect delBtn" type="submit" name="action">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <section id="target">
+
+        </section>
+            <!-- <div class="row">
                 <div class="col s12 m7">
                     <div class="card  hoverable blue-grey darken-4">
                         <div class="card-image">
@@ -51,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
     </main>
     <script src="script.js"></script>
 </body>
