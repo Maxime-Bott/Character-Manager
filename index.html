@@ -14,10 +14,10 @@
 </head>
 
 <body>
-    <main>
-        
+    <main class="blue-grey lighten-4">
+
         <section class="container inputs-container">
-            <!--character card template-->
+
             <h1>Character Manager</h1>
             <div class="content-inputs">
                 <form method="post" class='inputs'>
@@ -30,21 +30,22 @@
             </div>
         </section>
 
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card  hoverable blue-grey darken-4">
-                        <div class="card-image">
-                            <img src="./img/racooon.jpg">
-                            <span class="card-title">Character's name</span>
-                        </div>
-                        <button data-target="modal" class="btn modal-trigger light-blue pulse">More ?</button>
-                        <div class="card-content white-text">
-                            <p>Description of the character Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Quaerat sunt aliquid, reprehenderit quis enim quae nihil delectus a, dolor minima unde iure,
-                                aut eum vel. Consequatur saepe veniam iste at?</p>
-                        </div>
-                        <div class="card-action">
-                            <button class="btn light-blue waves-effect " type="submit" name="action">
+        <!--character card template-->
+        <div class="row">
+            <div class="col s12 m3 lg-6">
+                <div class="card  hoverable blue-grey darken-4">
+                    <div class="card-image">
+                        <img src="./img/racooon.jpg">
+                        <button data-target="modal" class="btn modal-trigger light-blue ">More ?</button>
+                    </div>
+                    <div class="card-content white-text ">
+                        <span class="card-title name">Character's name</span>
+                        <p class="description">Description of the character Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <div class="buttons center-align">
+                            <button class="btn edit light-blue waves-effect white-text" type="submit" name="action">
                                 Edit
                             </button>
                             <button class="btn red waves-effect " type="submit" name="action">
@@ -53,11 +54,12 @@
                         </div>
                     </div>
                 </div>
-                <!--character card template-->
             </div>
+            <!--character card template-->
+        </div>
     </main>
-    
-        <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
