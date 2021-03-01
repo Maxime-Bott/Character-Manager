@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Character Manager</title>
 </head>
 
@@ -36,15 +37,16 @@
                     <div class="card card small hoverable white-text blue-grey darken-4">
                         <div class="card-image">
                             <img src="" alt="card-img" class="img-card">
-
                         </div>
-                        <button data-target="modal" class="btn waves-effect modal-trigger light-blue">More ?</button>
-                        <div class="center-align">
+                        <div class="morebtn">
+                            <a class="btn-floating waves-effect light-blue pulse"><i class="material-icons">add</i></a>
+                        </div>
+
+                        <div class="center-align charactername">
                             <span class="card-title"></span>
                         </div>
 
                         <div class="card-content">
-
                             <p></p>
                         </div>
                         <div class="card-action">
@@ -63,6 +65,23 @@
         </template>
 
         <div id="target"></div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="images/office.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i
+                        class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i
+                        class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>

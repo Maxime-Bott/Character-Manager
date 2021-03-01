@@ -2,12 +2,12 @@
     margin-right:30px; 
 }
 
-.description{
-    text-align: justify;
+.morebtn{
+    text-align: center;
 }
 
-.name{
-    text-align: center;
+.charactername{
+    margin-top: 20px;
 }
 .container{
     display: flex;
