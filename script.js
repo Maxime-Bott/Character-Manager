@@ -11,12 +11,14 @@
         try {
             const response = await fetch('https://character-database.becode.xyz/characters');
             const characters = await response.json();
-            characters.forEach(({name, shortDescription, image}) => {
+            characters.forEach(({name, shortDescription, image, description}) => {
                 const elt = tpl.cloneNode(true).content;
                 
                 elt.querySelector('.img-card').src = image;
                 elt.querySelector('.card-title').textContent = name;
+                elt.querySelector('.card-title-modal').textContent = name;
                 elt.querySelector('.card-content').textContent = shortDescription;
+                elt.querySelector('.card-description').textContent = description;
                 
                 target.appendChild(elt);
                 
