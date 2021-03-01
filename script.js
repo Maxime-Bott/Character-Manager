@@ -1,4 +1,4 @@
-(() => {  // CREATE 
+(() => {  // aller chercher 
     const inputs = Array.from(document.querySelectorAll('.content-inputs input'));
     const tpl = document.querySelector('#tpl-card');
     const target = document.querySelector('#target');
@@ -30,7 +30,7 @@
     
     call()
     
-    // Add character UPDATE 
+    // Add character CREATE
     document.querySelector('#add').addEventListener('click',  async () =>{
         const values = inputs.map(({value}) => value.trim());
         const [name, shortDescription, description, image] = values;
