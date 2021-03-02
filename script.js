@@ -91,15 +91,4 @@
             console.error(response.status)
         }
     });
-
-    // async function getId (userIds) {
-    //     const pArray = userIds.map(async userId => {
-    //       const response = await fetch(`https://character-database.becode.xyz/characters${id}`);
-    //       return response.json();
-    //     });
-    //     const users = await Promise.all(pArray);
-    //     return users;
-    //   }
-
-    //   test = getId()
 })();
