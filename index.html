@@ -20,14 +20,18 @@
         <section class="container inputs-container">
 
             <h1>Character Manager</h1>
-            <div class="content-inputs">
-                <form method="post" class='inputs'>
-                    <input type="text" name="name" id="name" placeholder="Name">
-                    <input type="text" name="sm-description" id="sm-description" placeholder="Short Description" >
-                    <input type="text" name="description" id="description" placeholder="Description">
-                    <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
-                    <button type="button" id="add">Add</button>
-                </form>
+
+            <button type="button" id="btn-modale">Create character</button>
+            <div class="modale-overlay">
+                <div class="content-inputs modale red">
+                    <form method="post" class='inputs'>
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <input type="text" name="sm-description" id="sm-description" placeholder="Short Description">
+                        <input type="text" name="description" id="description" placeholder="Description">
+                        <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
+                        <button type="button" id="add">Add</button>
+                    </form>
+                </div>
             </div>
         </section>
         <div class="row">

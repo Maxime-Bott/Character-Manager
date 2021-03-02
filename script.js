@@ -71,10 +71,18 @@
     });
 
     // // Update characters
-    // delBtn.addEventListener('click', () =>{
+
+
 
     // })
 
+
+    // modale add character 
+
+    document.querySelector("#btn-modale").addEventListener("click", () => {
+        let modaleCreateChar = document.querySelector(".modale");
+        modaleCreateChar.classList.add("modale-active");
+    });
 })();
 
 
