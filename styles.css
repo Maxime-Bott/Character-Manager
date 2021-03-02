@@ -44,3 +44,19 @@ button{
 #target{
     margin-top: 100px;
 }
+
+.card-image{
+    width: max-content;
+    padding: 10px
+}
+
+.morebtn {
+    width: max-content;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.charactername{
+    margin-top: 0
+}

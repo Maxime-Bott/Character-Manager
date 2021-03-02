@@ -23,7 +23,7 @@
             <div class="content-inputs">
                 <form method="post" class='inputs'>
                     <input type="text" name="name" id="name" placeholder="Name">
-                    <input type="text" name="sm-description" id="sm-description" placeholder="Short Description">
+                    <input type="text" name="sm-description" id="sm-description" placeholder="Short Description" >
                     <input type="text" name="description" id="description" placeholder="Description">
                     <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
                     <button type="button" id="add">Add</button>
@@ -35,13 +35,12 @@
                 <div class="col s12 m4">
                     <div class="card card small hoverable white-text blue-grey darken-4">
                         <div class="card-image">
-                            <img src="" alt="card-img" class="img-card">
+                            <img src="" alt="card-img" class="img-card" style="width: 100px; height: 100px;">
                         </div>
                         <div class="morebtn">
                             <a class="btn-floating waves-effect light-blue activator pulse"><i
                                     class="material-icons">add</i></a>
                         </div>
-
                         <div class="center-align charactername">
                             <span class="card-title"></span>
                         </div>
@@ -54,7 +53,7 @@
                                 <button class="btn light-blue waves-effect edit " type="submit" name="action">
                                     Edit
                                 </button>
-                                <button class="btn red waves-effect delBtn" type="submit" name="action">
+                                <button class="btn red waves-effect delBtn" type="submit" name="action" id='delBtn'>
                                     Delete
                                 </button>
                             </div>
