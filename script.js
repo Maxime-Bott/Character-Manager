@@ -78,11 +78,21 @@
 
 
     // modale add character 
+let modalBtn = document.querySelector("#btn-modale")
+let closeModale = document.querySelector(".modale-close");
+let overlay = document.querySelector(".modale-overlay");
+let modaleCreateChar = document.querySelector(".modale");
 
-    document.querySelector("#btn-modale").addEventListener("click", () => {
-        let modaleCreateChar = document.querySelector(".modale");
+    modalBtn.addEventListener("click", () => {
         modaleCreateChar.classList.add("modale-active");
+        overlay.classList.add("modale-overlay-active");
     });
+
+    closeModale.addEventListener("click", () => {
+        overlay.classList.remove("modale-overlay-active");
+        modaleCreateChar.classList.remove("modale-active");
+    });
+
 })();
 
 

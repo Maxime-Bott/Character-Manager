@@ -19,17 +19,28 @@
 
         <section class="container inputs-container">
 
-            <h1>Character Manager</h1>
-
-            <button type="button" id="btn-modale">Create character</button>
+            <h1 class="blue-grey-darken-text">Character Manager</h1>
+            <div class="createCharacterBtn">
+                <button type="button" id="btn-modale"
+                    class=" blue-grey darken-4 white-text  hoverable create-btn">Create a Hero</button>
+            </div>
             <div class="modale-overlay">
-                <div class="content-inputs modale red">
+                <div class="content-inputs modale blue-grey darken-4 z-depth-2 hoverable">
+                    <a class="modale-close btn-floating  red right pulse"><i
+                            class="material-icons waves-effect white-text">close</i></a>
                     <form method="post" class='inputs'>
                         <input type="text" name="name" id="name" placeholder="Name">
                         <input type="text" name="sm-description" id="sm-description" placeholder="Short Description">
                         <input type="text" name="description" id="description" placeholder="Description">
-                        <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
-                        <button type="button" id="add">Add</button>
+                        <div class="select-file">
+                            <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
+                            <label for="card-img" class="red waves-effect white-text hoverable"> Select your hero's
+                                image</label>
+                        </div>
+                        <div class="add-btn">
+                            <button type="button" class="light-blue waves-effect hoverable" id="add">Add your
+                                hero</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -37,9 +48,9 @@
         <div class="row">
             <template id="tpl-card">
                 <div class="col s12 m4">
-                    <div class="card card small hoverable white-text blue-grey darken-4">
+                    <div class="card  card large hoverable white-text blue-grey darken-4">
                         <div class="card-image">
-                            <img src="" alt="card-img" class="img-card" style="width: 100px; height: 100px;">
+                            <img src="" alt="card-img" class="img-card">
                         </div>
                         <div class="morebtn">
                             <a class="btn-floating waves-effect light-blue activator pulse"><i
@@ -48,23 +59,24 @@
                         <div class="center-align charactername">
                             <span class="card-title"></span>
                         </div>
-
                         <div class="card-content">
                             <p></p>
                         </div>
-                        <div class="card-action">
-                            <div class="center-align">
-                                <button class="btn light-blue waves-effect edit " type="submit" name="action">
-                                    Edit
-                                </button>
-                                <button class="btn red waves-effect delBtn" type="submit" name="action" id='delBtn'>
-                                    Delete
-                                </button>
-                            </div>
+                        <div class="card-action edit-delete-btns">
+
+                            <button class="btn light-blue waves-effect edit " type="submit" name="action">
+                                Edit
+                            </button>
+                            <button class="btn red waves-effect delBtn" type="submit" name="action" id='delBtn'>
+                                Delete
+                            </button>
+
                         </div>
-                        <div class="card-reveal blue-grey darken-4">
-                            <span class="card-title white-text text-darken-4 card-title-reveal"><i
-                                    class="material-icons right">close</i></span>
+
+                        <div class="card-reveal pink blue-grey darken-4">
+                            <i class="material-icons waves-effect white-text right red">close</i>
+                            <span class="card-title white-text card-title-reveal">
+                            </span>
                             <p class="card-description white-text"></p>
                         </div>
                     </div>

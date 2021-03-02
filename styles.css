@@ -8,9 +8,19 @@
 
 .modale{
     display : none;
+
 }
 
-.modale-overlay{
+#add{
+    border-style: none;
+    border-radius: 5px;
+    width: 200px;
+    height : 35px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.modale-overlay-active{
     position : fixed; 
     top:0;
     left:0;
@@ -20,6 +30,7 @@
     display : flex; 
     justify-content: center;
     align-items: center;
+    z-index : 10;
 }
 
 .modale-active{
@@ -39,10 +50,10 @@ h1{
     justify-content: center;
 }
 .content-inputs{
-    width: 100%;
+    width: 70%;
     height: auto;
-    border: 1px solid black;
     padding: 20px;  
+    border-radius: 20px;
 }
 
 .inputs{
@@ -55,6 +66,50 @@ input {
     width: max-content;
 }
 
+input[type="file"]{
+    display:none;
+}
+
+label{
+    width: 200px;
+    height : 35px;
+    padding-top: 5px; 
+    text-align: center;
+    border-radius: 5px;
+    font-size : 15px !important;
+    margin-top : 20px;
+}
+
+.select-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createCharacterBtn{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top : 70px;
+}
+.add-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top : 20px;
+}
+
+.create-btn{
+    border-style: none;
+    border-radius: 5px;
+    width: 200px;
+    height : 70px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size : 20px !important;
+    
+}
 button{
     margin-top: 5px;
     width: 100px;
@@ -65,17 +120,33 @@ button{
 }
 
 .card-image{
-    width: max-content;
-    padding: 10px
+    display: flex;
+    justify-content: center;
+    padding-top:50px;
 }
+
 
 .morebtn {
     width: max-content;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 20px;
 }
 
 .charactername{
-    margin-top: 0
+    margin-top: 25px;
 }
+
+img{
+    width: 150px  !important; 
+    height: 150px !important;
+    border-radius: 5px !important;
+}
+
+
+.edit-delete-btns{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
