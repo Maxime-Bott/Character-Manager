@@ -2,7 +2,7 @@
     const inputs = Array.from(document.querySelectorAll('.content-inputs input'));
     const tpl = document.querySelector('#tpl-card');
     const target = document.querySelector('#target');
-    const arrayId = new Array()
+    const arrayId = new Array();
     
     //variables modale 
     let modalBtn = document.querySelector("#btn-modale")
@@ -71,8 +71,6 @@
                     }
                 });
                 }); 
-
-
         }
         catch (err) {
             console.error(err)
@@ -98,10 +96,10 @@
         const [name, shortDescription, description] = values;
         console.log(values)
         
-        if (values.some((value) => value === "")) {
-            alert("Invalid form");
-            return;
-        }
+        // if (values.some((value) => value === "")) {
+        //     alert("Invalid form");
+        //     return;
+        // }
 
         const response = await fetch('https://character-database.becode.xyz/characters', {
             method: 'POST',
