@@ -21,7 +21,7 @@
 
             <h1 class="blue-grey-darken-text">Character Manager</h1>
             <div class="createCharacterBtn">
-                <button type="button" id="btn-modale"
+               <button type="button" id="btn-modale"
                     class=" blue-grey darken-4 white-text  hoverable create-btn">Create a Hero</button>
             </div>
             <div class="modale-overlay">
@@ -29,16 +29,21 @@
                     <a class="modale-close btn-floating  red right pulse"><i
                             class="material-icons waves-effect white-text">close</i></a>
                     <form method="post" class='inputs'>
-                        <input type="text" name="name" id="name" placeholder="Name">
-                        <input type="text" name="sm-description" id="sm-description" placeholder="Short Description">
-                        <input type="text" name="description" id="description" placeholder="Description">
+                        <input type="text" name="name" id="name" placeholder="Name" autocomplete="off">
+                        <input type="text" name="sm-description" id="sm-description" placeholder="Short Description" autocomplete="off">
+                        <input type="text" name="description" id="description" placeholder="Description" >
                         <div class="select-file">
+<<<<<<< HEAD
                             <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
                             <label for="card-img" class="light-blue waves-effect black-text hoverable"> Select your hero's
+=======
+                            <label for="card-img" class="light-blue red waves-effect white-text hoverable white-text"> Select your hero's
+>>>>>>> 984dbc95b9897158f8cf276ff8f0e6271c4a1036
                                 image</label>
+                                <input type="file" name="img" id="card-img" accept=".jpg, .jpeg, .png">
                         </div>
                         <div class="add-btn">
-                            <button type="button" class="light-blue waves-effect hoverable" id="add">Add your
+                            <button type="button" class="light-blue waves-effect hoverable white-text" id="add">Add your
                                 hero</button>
                         </div>
                     </form>
@@ -74,8 +79,9 @@
                         </div>
 
                         <div class="card-reveal pink blue-grey darken-4">
-                            <i class="material-icons waves-effect white-text right red">close</i>
-                            <span class="card-title white-text card-title-reveal">
+                            <span class="card-title white-text reveal-span">
+                                <p class="card-title-reveal"></p>
+                                <i class="material-icons waves-effect white-text right red leave-btn">close</i>
                             </span>
                             <p class="card-description white-text"></p>
                         </div>

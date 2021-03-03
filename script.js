@@ -49,6 +49,7 @@
                     }
                 }) 
             });
+<<<<<<< HEAD
 
             //Update Character UPDATE 
 
@@ -72,6 +73,9 @@
                 });
                 }); 
 
+=======
+            //Update Character
+>>>>>>> 984dbc95b9897158f8cf276ff8f0e6271c4a1036
 
         }
         catch (err) {
@@ -96,6 +100,7 @@
     document.querySelector('#add').addEventListener('click',  async () =>{
         const values = inputs.map(({value}) => value.trim());
         const [name, shortDescription, description] = values;
+        console.log(values)
         
         if (values.some((value) => value === "")) {
             alert("Invalid form");
@@ -114,6 +119,7 @@
                 image,
             })
         })
+        console.log(values)
         document.location.reload();
         if (!response.ok) {
             console.error(response.status)
@@ -131,6 +137,8 @@
         overlay.classList.remove("modale-overlay-active");
         modaleCreateChar.classList.remove("modale-active");
     });
+
+    
 
 })();
 

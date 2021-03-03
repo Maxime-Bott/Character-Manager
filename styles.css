@@ -33,9 +33,11 @@
     z-index : 10;
 }
 
+
 .modale-active{
     display:block;
 }
+
 .charactername{
     margin-top: 20px;
 }
@@ -54,6 +56,17 @@ h1{
     height: auto;
     padding: 20px;  
     border-radius: 20px;
+    margin-top: -1200px;
+    animation-name: modal;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes modal {
+    0% {margin-top: -1200px}
+    100% {margin-top: 0}
+
 }
 
 .inputs{
@@ -64,6 +77,7 @@ h1{
 input {
     margin: 5px 0;
     width: max-content;
+    color: white;
 }
 
 input[type="file"]{
@@ -108,6 +122,7 @@ label{
     justify-content: center;
     align-items: center;
     font-size : 20px !important;
+    cursor:pointer;
     
 }
 button{
@@ -148,5 +163,13 @@ img{
 display: flex;
 justify-content: center;
 align-items: center;
+}
+
+.reveal-span{
+    display: flex;
+}
+.card-title-reveal{
+    margin: 0;
+    display:inline-block;
 }
 
