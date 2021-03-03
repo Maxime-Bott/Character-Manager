@@ -11,6 +11,26 @@
 
 }
 
+.deadpool {
+    height : 350px; 
+    padding: 10px, 0 0 50px;
+}
+
+header{
+    height:55vh;
+    position : relative ;
+    left:0;
+}
+.cross{
+    margin-top:30px;
+    margin-right: 20px;
+}
+.searchBoxInput{
+    width : 50%;
+    padding : 25px;
+    border-radius : 20px;
+}
+
 #add{
     border-style: none;
     border-radius: 5px;
@@ -50,6 +70,8 @@
 h1{
     display: flex;
     justify-content: center;
+    position : relative; 
+    top : -250px;
 }
 .content-inputs{
     width: 70%;
@@ -101,10 +123,10 @@ label{
 }
 
 .createCharacterBtn{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    margin-top : 70px;
+    position : absolute;
+    margin-top : -100px;
+    margin-left : 360px;
+    
 }
 .add-btn{
     display: flex;
@@ -152,7 +174,7 @@ button{
     margin-top: 25px;
 }
 
-img{
+.img-hero{
     width: 150px  !important; 
     height: 150px !important;
     border-radius: 5px !important;
@@ -172,4 +194,3 @@ align-items: center;
     margin: 0;
     display:inline-block;
 }
-
