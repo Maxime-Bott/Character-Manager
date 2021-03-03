@@ -4,6 +4,11 @@
     const target = document.querySelector('#target');
     const arrayId = new Array()
     
+    //variables modale 
+    let modalBtn = document.querySelector("#btn-modale")
+    let closeModale = document.querySelector(".modale-close");
+    let overlay = document.querySelector(".modale-overlay");
+    let modaleCreateChar = document.querySelector(".modale");
 
     //Print characters  READ
     const call = async () => {
@@ -44,7 +49,30 @@
                     }
                 }) 
             });
-            //Update Character
+
+            //Update Character UPDATE 
+
+            Array.from(document.querySelectorAll('.editBtn')).forEach( (btn,x)=> {
+                    btn.addEventListener("click", async () => {
+                        const editConfirm = confirm('Do want edit this Hero ?');
+                        //console.log(editConfirm);
+                        if(editConfirm){
+                            modaleCreateChar.classList.add("modale-active");
+                            overlay.classList.add("modale-overlay-active");
+                        const editId = arrayId[x]
+                        const editResult = await fetch (`https://character-database.becode.xyz/characters/${editId}`,{
+                            method : 'PUT',
+                            headers : {
+                                "Content-Type": "application/json"
+                            },
+                            
+                        });
+                        await editResult.json();
+                    }
+                });
+                }); 
+
+
         }
         catch (err) {
             console.error(err)
@@ -92,18 +120,7 @@
         }
     });
 
-    // // Update characters
-
-
-
-    // })
-
-
     // modale add character 
-    let modalBtn = document.querySelector("#btn-modale")
-    let closeModale = document.querySelector(".modale-close");
-    let overlay = document.querySelector(".modale-overlay");
-    let modaleCreateChar = document.querySelector(".modale");
 
     modalBtn.addEventListener("click", () => {
         modaleCreateChar.classList.add("modale-active");
