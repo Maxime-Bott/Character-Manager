@@ -55,7 +55,6 @@
             Array.from(document.querySelectorAll('.editBtn')).forEach( (btn,x)=> {
                     btn.addEventListener("click", async () => {
                         const editConfirm = confirm('Do want edit this Hero ?');
-                        //console.log(editConfirm);
                         if(editConfirm){
                             modaleCreateChar.classList.add("modale-active");
                             overlay.classList.add("modale-overlay-active");
@@ -115,7 +114,6 @@
                 image,
             })
         })
-        console.log(values)
         document.location.reload();
         if (!response.ok) {
             console.error(response.status)
@@ -133,9 +131,6 @@
         overlay.classList.remove("modale-overlay-active");
         modaleCreateChar.classList.remove("modale-active");
     });
-
-    
-
 })();
 
 
