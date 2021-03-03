@@ -17,12 +17,28 @@
 <body>
     <main class="blue-grey lighten-4">
 
-        <section class="container inputs-container">
+        <header class="blue-grey darken-4">
+            <div class="input-field searchBoxInput right" >
+                <input id="search" type="search" required autocomplete="off" placeholder="Search if you can find your hero">
+                <i class="material-icons cross">close</i>
 
-            <h1 class="blue-grey-darken-text">Character Manager</h1>
+            </div>
+        </form>
+            <img class="deadpool " src="./img/header-deadpool-gimped.png" alt="Deadpool is watching you" />
+            <form>
+              
+            <h1 class="white-text">Character Manager</h1>
+            
+           
+          
+            
+
+        </header>
+
+        <section class="container inputs-container">
             <div class="createCharacterBtn">
                 <button type="button" id="btn-modale"
-                    class=" blue-grey darken-4 white-text  hoverable create-btn">Create a Hero</button>
+                    class=" light-blue black-text  hoverable create-btn">Create a Hero</button>
             </div>
             <div class="modale-overlay">
                 <div class="content-inputs modale blue-grey darken-4 z-depth-2 hoverable">
@@ -48,12 +64,13 @@
                 </div>
             </div>
         </section>
+
         <div class="row">
             <template id="tpl-card">
                 <div class="col s12 m4">
                     <div class="card  card large hoverable white-text blue-grey darken-4">
                         <div class="card-image">
-                            <img src="" alt="card-img" class="img-card">
+                            <img src="" alt="card-img" class="img-card img-hero">
                         </div>
                         <div class="morebtn">
                             <a class="btn-floating waves-effect light-blue activator pulse"><i
