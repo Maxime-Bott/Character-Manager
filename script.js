@@ -31,7 +31,7 @@
             //Delete Character
             Array.from(document.querySelectorAll('.delBtn')).forEach((btn,i) => {
                 btn.addEventListener('click', async () => {
-                    const confirmDelete = confirm('Delete ?');
+                    const confirmDelete = confirm("Really want to delete this Hero ? They're all kinda unique...");
                     if(confirmDelete){
                         const id = arrayId[i]
                         const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
@@ -40,7 +40,7 @@
                                 "Content-Type": "application/json"
                             },
                         })
-                        const deleteCharacter = await response.json();
+                        await response.json();
                         document.location.reload();
 
                         if(!response.ok){
@@ -49,7 +49,6 @@
                     }
                 }) 
             });
-<<<<<<< HEAD
 
             //Update Character UPDATE 
 
@@ -73,9 +72,6 @@
                 });
                 }); 
 
-=======
-            //Update Character
->>>>>>> 984dbc95b9897158f8cf276ff8f0e6271c4a1036
 
         }
         catch (err) {
