@@ -6,10 +6,10 @@ let search = "";
 let image = "";
 
 //variables modale 
-let modalBtn = document.querySelector("#btn-modale");
-let closeModale = document.querySelector(".modale-close");
-let overlay = document.querySelector(".modale-overlay");
-let modaleCreateChar = document.querySelector(".modale");
+const modalBtn = document.querySelector("#btn-modale");
+const closeModale = document.querySelector(".modale-close");
+const overlay = document.querySelector(".modale-overlay");
+const modaleCreateChar = document.querySelector(".modale");
 
 
 const fetchCharacters = async () =>{
@@ -30,6 +30,7 @@ const getId = async () =>{
     await fetchCharacters();
     characters.forEach(character => {
         arrayId.push(character.id)
+        
     });
 }
 
