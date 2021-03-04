@@ -2,8 +2,8 @@ const inputs = Array.from(document.querySelectorAll('.content-inputs input'));
 const target = document.querySelector('#target');
 let arrayId = new Array();
 let characters;
-let search = '';
-let image = '';
+let search = "";
+let image = "";
 
 //variables modale 
 let modalBtn = document.querySelector("#btn-modale")
@@ -31,8 +31,10 @@ const printCharacters = async () => {
     await fetchCharacters()
     
     target.innerHTML = (
-        characters.filter(character => character.name.toLowerCase().includes(search.toLowerCase()
-        )).map(character => (
+        characters
+        // .filter(character => character.name.toLowerCase().includes(search.toLowerCase()
+        // ))
+        .map(character => (
 
                 `<div class="col s12 m4">
                 <div class="card  card large hoverable white-text blue-grey darken-4">
@@ -68,17 +70,15 @@ const printCharacters = async () => {
                         <p class="card-description white-text">${character.description}</p>
                     </div>
                 </div>
-            </div>
-                `
+            </div>`
                 
-            ))
-    )
-
+        )).join('')
+    );
     getId()
     deleteCharacter();
     updateCharacter();
     addCharacter();
-}
+};
 
 
 
