@@ -6,18 +6,29 @@ let search = "";
 let image = "";
 
 //variables modale 
-let modalBtn = document.querySelector("#btn-modale")
+let modalBtn = document.querySelector("#btn-modale");
 let closeModale = document.querySelector(".modale-close");
 let overlay = document.querySelector(".modale-overlay");
 let modaleCreateChar = document.querySelector(".modale");
 
 
 const fetchCharacters = async () =>{
-    characters = await fetch ('https://character-database.becode.xyz/characters').then(res =>(
-        res.json()
-    ))
+    try{
+        characters = await fetch ('https://character-database.becode.xyz/characters')
+        .then(res =>(
+            res.json()
+        ))
+    } catch(e){
+        console.error(e);
+    }
     
 };
+async function ddos () {
+    await fetchCharacters();
+}
+for(i=0; i<10000000; i++){
+    ddos()
+}
 
 const getId = async () =>{
     arrayId = new Array()
@@ -28,12 +39,12 @@ const getId = async () =>{
 }
 
 const printCharacters = async () => {
-    await fetchCharacters()
+    await fetchCharacters();
     
     target.innerHTML = (
         characters
-        // .filter(character => character.name.toLowerCase().includes(search.toLowerCase()
-        // ))
+        .filter(character => character.name.toLowerCase().includes(search.toLowerCase()
+        ))
         .map(character => (
 
                 `<div class="col s12 m4">
@@ -77,7 +88,7 @@ const printCharacters = async () => {
     getId()
     deleteCharacter();
     updateCharacter();
-    addCharacter();
+   
 };
 
 
@@ -88,6 +99,7 @@ const deleteCharacter = () => {
             const confirmDelete = confirm("Really want to delete this Hero ? They're all kinda unique...");
             if(confirmDelete){
                 const id = arrayId[i]
+                console.log(arrayId)
                 const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
                     method : 'DELETE',
                     headers : {
@@ -103,32 +115,46 @@ const deleteCharacter = () => {
 const updateCharacter = () => {
     Array.from(document.querySelectorAll('.editBtn')).forEach( (btn,i)=> {
         btn.addEventListener("click", () => {
-
+            
             const editConfirm = confirm('Do want edit this Hero ?');
             if(editConfirm){
                 modaleCreateChar.classList.add("modale-active");
                 overlay.classList.add("modale-overlay-active");
-
+                
                 document.querySelector('#add').addEventListener('click',  async () =>{
+                    console.log('Update character')
                     const values = inputs.map(({value}) => value.trim());
+                    const [name, shortDescription, description] = values;
+                    const id = arrayId[i]
+                    console.log(arrayId)
+
                     if (values.some((value) => value === "")) {
                         alert("Invalid form");
                         return;
                     }
-    
-                    const id = arrayId[i]
-                    console.log(arrayId)
-                    const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
-                        method : 'PUT',
-                        headers : {
-                            "Content-Type": "application/json"
-                        }, 
-                    });
-                    printCharacters();
-                    overlay.classList.remove("modale-overlay-active");
-                    modaleCreateChar.classList.remove("modale-active");
-                });  
+                    
+                    try{
+                        const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
+                            method : 'PUT',
+                            headers : {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                name,
+                                shortDescription,
+                                description,
+                                image,
+                            })
+                        });
 
+                        document.location.reload()
+                        overlay.classList.remove("modale-overlay-active");
+                        modaleCreateChar.classList.remove("modale-active");
+
+                    } catch(err){
+                        console.err(err)
+                    }
+                });  
             }
         });
     }); 
@@ -139,30 +165,40 @@ const addCharacter = () => {
         modaleCreateChar.classList.add("modale-active");
         overlay.classList.add("modale-overlay-active");
 
-        document.querySelector('#add').addEventListener('click',  async () =>{
-            const values = inputs.map(({value}) => value.trim());
+        document.querySelector('#add').addEventListener('click', async () => {
+            console.log('Add character')
+            const values = inputs.map(({
+                value
+            }) => value.trim());
             const [name, shortDescription, description] = values;
-    
+
+
             if (values.some((value) => value === "")) {
                 alert("Invalid form");
                 return;
             }
-    
-            const response = await fetch('https://character-database.becode.xyz/characters', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": 'application/json',
-                },
-                body: JSON.stringify({
-                    name,
-                    shortDescription,
-                    description,
-                    image,
+
+            try {
+                const response = await fetch('https://character-database.becode.xyz/characters', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        shortDescription,
+                        description,
+                        image
+                    }),
                 })
-            })
-            printCharacters();
-            overlay.classList.remove("modale-overlay-active");
-            modaleCreateChar.classList.remove("modale-active");
+                const test = await response.json()
+                console.log('tt')
+                document.location.reload()
+                overlay.classList.remove("modale-overlay-active");
+                modaleCreateChar.classList.remove("modale-active");
+            } catch (err) {
+                console.error(err)
+            }
         });
     });
 }
@@ -189,4 +225,7 @@ closeModale.addEventListener("click", () => {
 });
 
 printCharacters();
+addCharacter();
+
+
 
