@@ -106,9 +106,8 @@ const deleteCharacter = () => {
             const confirmDelete = confirm("Really want to delete this Hero ? They're all kinda unique...");
 
             if(confirmDelete){
-                const id = arrayId[i];
                 try{
-                    const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
+                    const response = await fetch (`https://character-database.becode.xyz/characters/${arrayId[i]}`,{
                         method : 'DELETE',
                         headers : {
                             "Content-Type": "application/json"
@@ -137,14 +136,13 @@ const updateCharacter = () => {
                 for (let i=0; i<getValues.length; i++){
                     inputs[i].value =  getValues[i]
                 }
-                
+
                 modaleCreateChar.classList.add("modale-active");
                 overlay.classList.add("modale-overlay-active");
                 
                 document.querySelector('#add').addEventListener('click',  async () =>{
                     const values = inputs.map(({value}) => value.trim());
                     const [name, shortDescription, description] = values;
-                    const id = arrayId[i]
 
                     if (values.some((value) => value === "")) {
                         alert("Invalid form");
@@ -152,7 +150,7 @@ const updateCharacter = () => {
                     }
                     
                     try{
-                        const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
+                        const response = await fetch (`https://character-database.becode.xyz/characters/${arrayId[i]}`,{
                             method : 'PUT',
                             headers : {
                                 "Content-Type": "application/json"
