@@ -21,7 +21,7 @@ The project can be considered as the **JAVASCRIPT** **_CONSOLIDATION_** project 
 
 ## Curious ? 
 
-[Click to open our version]()
+[Click to open our version](https://maxime-bott.github.io/Character-Manager/)
 
 
 ## A word about technologies  we used : 
