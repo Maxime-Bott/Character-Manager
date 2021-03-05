@@ -1,9 +1,15 @@
 const inputs = Array.from(document.querySelectorAll('.content-inputs input'));
 const target = document.querySelector('#target');
-let arrayId = new Array();
 let characters;
 let search = "";
 let image = "";
+
+//get data
+let arrayId ;
+let arrayName;
+let arrayDescription;
+let arraySmDescription;
+
 
 //variables modale 
 const modalBtn = document.querySelector("#btn-modale");
@@ -20,23 +26,27 @@ const fetchCharacters = async () =>{
         ))
     } catch(e){
         console.error(e);
-    }
-    
+    };
 };
 
 
-const getId = async () =>{
-    arrayId = new Array()
-    await fetchCharacters();
+const getData = async () =>{
+    arrayId = new Array();
+    arrayName = new Array();
+    arrayDescription = new Array();
+    arraySmDescription = new Array();
+
     characters.forEach(character => {
-        arrayId.push(character.id)
-        
+        arrayId.push(character.id);
+        arrayName.push(character.name);
+        arrayDescription.push(character.description);
+        arraySmDescription.push(character.shortDescription);
+        // arrayImg.push(character.image);
     });
-}
+};
 
 const printCharacters = async () => {
     await fetchCharacters();
-    
     target.innerHTML = (
         characters
         .filter(character => character.name.toLowerCase().includes(search.toLowerCase()
@@ -81,10 +91,10 @@ const printCharacters = async () => {
                 
         )).join('')
     );
-    getId()
+
+    getData()
     deleteCharacter();
     updateCharacter();
-   
 };
 
 
@@ -92,37 +102,49 @@ const printCharacters = async () => {
 const deleteCharacter = () => {
     Array.from(document.querySelectorAll('.delBtn')).forEach((btn,i) => {
         btn.addEventListener('click', async () => {
+            
             const confirmDelete = confirm("Really want to delete this Hero ? They're all kinda unique...");
+
             if(confirmDelete){
-                const id = arrayId[i]
-                console.log(arrayId)
-                const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
-                    method : 'DELETE',
-                    headers : {
-                        "Content-Type": "application/json"
-                    },
-                })
-                printCharacters();
-            }
-        }) 
+                const id = arrayId[i];
+                try{
+                    const response = await fetch (`https://character-database.becode.xyz/characters/${id}`,{
+                        method : 'DELETE',
+                        headers : {
+                            "Content-Type": "application/json"
+                        },
+                    })
+                    printCharacters();
+
+                } catch(e) {
+                    console.error(e);
+                };
+            };
+        }); 
     });
-}
+};
+
 
 const updateCharacter = () => {
     Array.from(document.querySelectorAll('.editBtn')).forEach( (btn,i)=> {
         btn.addEventListener("click", () => {
+
             
             const editConfirm = confirm('Do want edit this Hero ?');
             if(editConfirm){
+                const getValues = [arrayName[i], arraySmDescription[i], arrayDescription[i]];
+
+                for (let i=0; i<getValues.length; i++){
+                    inputs[i].value =  getValues[i]
+                }
+                
                 modaleCreateChar.classList.add("modale-active");
                 overlay.classList.add("modale-overlay-active");
                 
                 document.querySelector('#add').addEventListener('click',  async () =>{
-                    console.log('Update character')
                     const values = inputs.map(({value}) => value.trim());
                     const [name, shortDescription, description] = values;
                     const id = arrayId[i]
-                    console.log(arrayId)
 
                     if (values.some((value) => value === "")) {
                         alert("Invalid form");
@@ -144,17 +166,15 @@ const updateCharacter = () => {
                         });
 
                         document.location.reload()
-                        overlay.classList.remove("modale-overlay-active");
-                        modaleCreateChar.classList.remove("modale-active");
 
                     } catch(err){
                         console.err(err)
                     }
                 });  
-            }
+            };
         });
     }); 
-}
+};
 
 const addCharacter = () => {
     modalBtn.addEventListener("click", () => {
@@ -187,22 +207,21 @@ const addCharacter = () => {
                         image
                     }),
                 })
-                const test = await response.json()
-                console.log('tt')
-                document.location.reload()
-                overlay.classList.remove("modale-overlay-active");
-                modaleCreateChar.classList.remove("modale-active");
+                await response.json();
+                document.location.reload();
+
             } catch (err) {
                 console.error(err)
-            }
+            };
         });
     });
-}
+};
 
 //Search Input
-document.querySelector('#search').addEventListener('input', (e) => {search = e.target.value
+document.querySelector('#search').addEventListener('input', (e) => {
+    search = e.target.value;
     printCharacters();
-})
+});
 
 //Convert image
 document.querySelector('#card-img').addEventListener("change",(e) => {
@@ -222,6 +241,3 @@ closeModale.addEventListener("click", () => {
 
 printCharacters();
 addCharacter();
-
-
-
